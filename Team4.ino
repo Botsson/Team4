@@ -11,7 +11,7 @@ int lastError = 0;
 int numberOfErrors = 0;
 // This is the maximum speed the motors will be allowed to turn.
 // (400 lets the motors go at top speed; decrease to impose a speed limit)
-const int MAX_SPEED = 200;
+const int MAX_SPEED = 400;
 
 
 void setup()
@@ -28,7 +28,7 @@ void setup()
 
   // Wait 1 second and then begin automatic sensor calibration
   // by rotating in place to sweep the sensors over the line
-  delay(1000);
+  // sdelay(50);
   int i;
   for(i = 0; i < 80; i++)
   {
@@ -40,7 +40,7 @@ void setup()
 
     // Since our counter runs to 80, the total delay will be
     // 80*20 = 1600 ms.
-    delay(20);
+    //delay(20);
   }
   motors.setSpeeds(0,0);
 
@@ -48,7 +48,7 @@ void setup()
   digitalWrite(13, LOW);
 
   // Wait for the user button to be pressed and released
-  button.waitForButton();
+  //button.waitForButton();
 }
 
 void loop()
