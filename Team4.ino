@@ -48,7 +48,6 @@ const char fugue[] PROGMEM =
 void setup()
 {
   // play note A5
-  /*
   buzzer.playNote(NOTE_A(5), 200, 15);
 
   // Initialize the reflectance sensors module
@@ -84,7 +83,6 @@ void setup()
   buzzer.play(">g32>>c32");
 
   // Wait for the user button to be pressed and released
-  */
   button.waitForButton();
 
   // Play music and wait for it to finish before we start driving.
@@ -137,8 +135,8 @@ void loop()
   if (m2Speed > MAX_SPEED)
     m2Speed = MAX_SPEED;
 
-  m1Speed = MAX_SPEED;
-  m2Speed = MAX_SPEED;
+  //m1Speed = MAX_SPEED;
+  //m2Speed = MAX_SPEED;
   
   motors.setSpeeds(m1Speed, m2Speed);
   
