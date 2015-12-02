@@ -95,7 +95,7 @@ void setup()
 void loop()
 {
   // announch robot name: Mozart
-  buzzer.playFromProgramSpace(fugue);
+  // buzzer.playFromProgramSpace(fugue);
   
   unsigned int sensors[6];
 
@@ -139,11 +139,9 @@ void loop()
 
   m1Speed = MAX_SPEED;
   m2Speed = MAX_SPEED;
-  if(error >= 200) {
-    motors.setSpeeds(m1Speed, m2Speed);
-  } else {
-    motors.setSpeeds(m1Speed, m2Speed);
-  }
+  
+  motors.setSpeeds(m1Speed, m2Speed);
+  
 
   
 }
