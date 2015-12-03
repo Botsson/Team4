@@ -66,27 +66,31 @@ void loop()
   // individual sensor readings
 
   int position;
-  //if(a == 0) {
-    position = reflectanceSensors.readLine(sensors);
+  if( offline != 3) {
+   position = reflectanceSensors.readLine(sensors);
+  } else {
+    position = 0;
+  }
 
     
-  //}
-    a = a + 1;
-    if(a > 5 ) {
-      a = 0;
-    }
+  
+  a = a + 1;
+  if(a > 5 ) {
+    a = 0;
+  }
   
    if(position == 0 ) {
+    
       if(offline == 0) {
         offline = 1;
       }
-
       if(offline == 1) {
         motors.setSpeeds(MAX_SPEED, MAX_SPEED);
       }
 
       if(offline == 2) {
         motors.setSpeeds(0, 0);
+        offline = 3;
       }
    } else {
 
